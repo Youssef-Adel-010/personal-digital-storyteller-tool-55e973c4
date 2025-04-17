@@ -7,6 +7,7 @@ import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import ParticlesBackground from '@/components/ParticlesBackground';
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll';
 
 const Index = () => {
@@ -15,11 +16,12 @@ const Index = () => {
   
   // Set page title
   useEffect(() => {
-    document.title = 'John Doe | Portfolio';
+    document.title = 'Youssef Adel | Backend Developer';
   }, []);
 
   return (
     <div className="min-h-screen bg-background">
+      <ParticlesBackground />
       <Navbar />
       <Hero />
       <About />

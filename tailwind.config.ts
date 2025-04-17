@@ -115,17 +115,72 @@ export default {
 						transform: 'scale(1)',
 						opacity: '1'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-glow': {
+					'0%, 100%': {
+						opacity: '0.6',
+						boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)'
+					},
+					'50%': {
+						opacity: '1',
+						boxShadow: '0 0 20px rgba(59, 130, 246, 0.8)'
+					}
+				},
+				'slide-in-left': {
+					'0%': {
+						transform: 'translateX(-100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
+				},
+				'slide-in-right': {
+					'0%': {
+						transform: 'translateX(100%)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateX(0)',
+						opacity: '1'
+					}
+				},
+				'particle-float': {
+					'0%': { transform: 'translateY(0) translateX(0) rotate(0)' },
+					'25%': { transform: 'translateY(-15px) translateX(5px) rotate(5deg)' },
+					'50%': { transform: 'translateY(-25px) translateX(-5px) rotate(10deg)' },
+					'75%': { transform: 'translateY(-15px) translateX(10px) rotate(5deg)' },
+					'100%': { transform: 'translateY(0) translateX(0) rotate(0)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.5s ease-out',
-				'scale-in': 'scale-in 0.3s ease-out'
+				'scale-in': 'scale-in 0.3s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+				'slide-in-left': 'slide-in-left 0.5s ease-out',
+				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'particle-float': 'particle-float 15s ease-in-out infinite'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif'],
-			}
+				sans: ['Outfit', 'Inter', 'sans-serif'],
+				display: ['Outfit', 'sans-serif'],
+			},
+			backgroundImage: {
+				'blue-gradient': 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #172554 100%)',
+				'glow-gradient': 'radial-gradient(circle, rgba(56, 189, 248, 0.1) 0%, rgba(30, 64, 175, 0) 70%)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
