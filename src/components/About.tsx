@@ -12,9 +12,8 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-on-scroll">
             <div className="aspect-square rounded-2xl overflow-hidden bg-muted relative">
-              {/* You can replace this with an actual image */}
               <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-lg">
-                Profile Image
+                <img src="../../Youssef_Adel.jpg"></img>
               </div>
             </div>
           </div>
@@ -42,11 +41,12 @@ const About = () => {
                 </span>
               ))}
             </div>
-            
+            <a href="../../Youssef-Adel.pdf" download>
             <Button className="gap-2">
               <Download size={16} />
               Download Resume
             </Button>
+            </a>
           </div>
         </div>
         
@@ -69,7 +69,7 @@ const About = () => {
               },
               {
                 title: 'Business Owner',
-                description: 'Managing projects and leading development teams to deliver efficient solutions.'
+                description: 'Managing projects and selling on online stores.'
               }
             ].map((item, index) => (
               <Card key={index} className="animate-on-scroll">

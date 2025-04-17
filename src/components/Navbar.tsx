@@ -59,19 +59,18 @@ const Navbar = () => {
         
         {/* Theme Toggle and Resume Button - Desktop */}
         <div className="hidden md:flex items-center gap-4">
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={toggleTheme} 
-            className="rounded-full transition-transform hover:scale-110 duration-300"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-          </Button>
-          
-          <Button variant="outline" className="glow-effect transition-all duration-300" asChild>
-            <a href="#" download="youssef-adel-resume.pdf">Resume</a>
-          </Button>
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={toggleTheme} 
+              className="rounded-full transition-transform hover:scale-110 duration-300"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </Button>
+            <Button variant="outline" className="glow-effect transition-all duration-300" asChild>
+            <a href='../../Youssef-Adel.pdf' download>Resume</a>
+            </Button>
         </div>
 
         {/* Mobile Menu Toggle and Theme Toggle */}
