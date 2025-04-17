@@ -13,7 +13,7 @@ const About = () => {
           <div className="animate-on-scroll">
             <div className="aspect-square rounded-2xl overflow-hidden bg-muted relative">
               <div className="absolute inset-0 flex items-center justify-center text-muted-foreground text-lg">
-                <img src="../../Youssef_Adel.jpg"></img>
+                <img src="/Youssef_Adel.jpg"></img>
               </div>
             </div>
           </div>
@@ -41,7 +41,7 @@ const About = () => {
                 </span>
               ))}
             </div>
-            <a href="../../Youssef-Adel.pdf" download>
+            <a href="/Youssef-Adel.pdf" download>
             <Button className="gap-2">
               <Download size={16} />
               Download Resume

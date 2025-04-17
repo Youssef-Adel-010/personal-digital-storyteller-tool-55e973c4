@@ -69,7 +69,7 @@ const Navbar = () => {
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </Button>
             <Button variant="outline" className="glow-effect transition-all duration-300" asChild>
-            <a href='../../Youssef-Adel.pdf' download>Resume</a>
+            <a href='/Youssef-Adel.pdf' download>Resume</a>
             </Button>
         </div>
 
