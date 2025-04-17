@@ -8,6 +8,38 @@
 
 @layer base {
   :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 217 33% 30%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
     --background: 221 39% 11%;
     --foreground: 210 40% 98%;
 
@@ -35,18 +67,17 @@
     --border: 217 33% 17%;
     --input: 217 33% 17%;
     --ring: 224 71% 45%;
-
-    --radius: 0.5rem;
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
 
   body {
-    @apply bg-background text-foreground bg-blue-gradient;
+    @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   
@@ -59,7 +90,11 @@
   }
   
   .glow-effect::before {
-    @apply content-[''] absolute -inset-0.5 bg-primary/30 rounded-lg blur opacity-75 z-[-1] transition-all duration-300;
+    @apply content-[''] absolute -inset-0.5 bg-primary/30 rounded-lg blur opacity-0 z-[-1] transition-all duration-500;
+  }
+  
+  .dark .glow-effect::before {
+    @apply opacity-75;
   }
   
   .glow-effect:hover::before {
@@ -67,11 +102,11 @@
   }
   
   .hover-underline {
-    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-500 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
   
   .animate-on-scroll {
-    @apply opacity-0 translate-y-10 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-10 transition-all duration-1000 ease-out;
   }
   
   .animate-on-scroll.is-visible {
@@ -87,11 +122,60 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-300 to-blue-500 bg-clip-text text-transparent;
+    @apply dark:bg-gradient-to-r dark:from-blue-300 dark:to-blue-500 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] hover:-translate-y-1;
+    @apply transition-all duration-500 hover:-translate-y-2;
+  }
+  
+  .dark .card-hover {
+    @apply hover:shadow-[0_0_15px_rgba(59,130,246,0.5)];
+  }
+  
+  .light .card-hover {
+    @apply hover:shadow-[0_0_15px_rgba(29,78,216,0.4)];
+  }
+  
+  .page-transition {
+    @apply animate-fade-in;
+  }
+  
+  .bg-blue-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #172554 100%);
+  }
+  
+  .bg-light-gradient {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #dbeafe 100%);
+  }
+
+  @keyframes floating {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+  }
+  
+  @keyframes slide-down {
+    from { 
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-slide-down {
+    animation: slide-down 0.3s ease forwards;
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 4s ease-in-out infinite;
   }
 }
 

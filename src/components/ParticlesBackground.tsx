@@ -1,8 +1,10 @@
 
 import { useEffect, useRef } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const ParticlesBackground = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
   
   useEffect(() => {
     const container = containerRef.current;
@@ -12,7 +14,7 @@ const ParticlesBackground = () => {
     container.innerHTML = '';
     
     // Create particles
-    const particleCount = 20;
+    const particleCount = 25;
     
     for (let i = 0; i < particleCount; i++) {
       const particle = document.createElement('div');
@@ -37,9 +39,20 @@ const ParticlesBackground = () => {
       const opacity = Math.random() * 0.5 + 0.1;
       particle.style.opacity = opacity.toString();
       
+      // Theme-based particle color
+      if (theme === 'dark') {
+        particle.classList.add('bg-primary/20');
+      } else {
+        particle.classList.add('bg-blue-500/20');
+      }
+      
+      // Random animation duration
+      const duration = Math.random() * 10 + 15;
+      particle.style.animationDuration = `${duration}s`;
+      
       container.appendChild(particle);
     }
-  }, []);
+  }, [theme]);
   
   return <div ref={containerRef} className="particles" />;
 };

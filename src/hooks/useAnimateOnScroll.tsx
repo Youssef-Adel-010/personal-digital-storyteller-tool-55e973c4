@@ -8,8 +8,20 @@ export const useAnimateOnScroll = () => {
       
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+          // Add staggered animation delay based on index
           if (entry.isIntersecting) {
+            const index = Array.from(elements).indexOf(entry.target);
+            const delay = Math.min(index * 0.1, 0.5); // Cap delay at 0.5s
+            
+            entry.target.style.transitionDelay = `${delay}s`;
             entry.target.classList.add('is-visible');
+            
+            // Remove the delay after animation completes to prevent issues with subsequent animations
+            setTimeout(() => {
+              entry.target.style.transitionDelay = '0s';
+            }, 1000 + delay * 1000);
+            
+            // Unobserve after animation
             observer.unobserve(entry.target);
           }
         });
@@ -32,8 +44,12 @@ export const useAnimateOnScroll = () => {
     // Rerun when new elements might be added to the DOM
     window.addEventListener('load', animateElements);
     
+    // Also run on page resize events
+    window.addEventListener('resize', animateElements);
+    
     return () => {
       window.removeEventListener('load', animateElements);
+      window.removeEventListener('resize', animateElements);
     };
   }, []);
 };

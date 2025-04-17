@@ -9,10 +9,12 @@ import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import ParticlesBackground from '@/components/ParticlesBackground';
 import useAnimateOnScroll from '@/hooks/useAnimateOnScroll';
+import { useTheme } from '@/contexts/ThemeContext';
 
 const Index = () => {
   // Initialize scroll animations
   useAnimateOnScroll();
+  const { theme } = useTheme();
   
   // Set page title
   useEffect(() => {
@@ -20,15 +22,17 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen bg-background transition-colors duration-500 ${theme === 'dark' ? 'bg-blue-gradient' : 'bg-light-gradient'}`}>
       <ParticlesBackground />
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
-      <Footer />
+      <div className="page-transition">
+        <Hero />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };
