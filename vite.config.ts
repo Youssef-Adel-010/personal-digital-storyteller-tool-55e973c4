@@ -14,6 +14,7 @@ export default defineConfig(({ mode }) => ({
     mode === 'development' &&
     componentTagger(),
   ].filter(Boolean),
+  base: "/personal-digital-storyteller-tool-55e973c4",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
