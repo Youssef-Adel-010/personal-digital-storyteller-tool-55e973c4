@@ -2,14 +2,14 @@
 import { Progress } from '@/components/ui/progress';
 
 const skillsData = [
-  { name: "HTML & CSS", level: 95 },
-  { name: "JavaScript", level: 90 },
-  { name: "React", level: 85 },
-  { name: "TypeScript", level: 80 },
-  { name: "Node.js", level: 75 },
-  { name: "UI/UX Design", level: 85 },
-  { name: "Next.js", level: 80 },
-  { name: "Tailwind CSS", level: 90 },
+  { name: "ASP.NET", level: 99 },
+  { name: "Python", level: 95 },
+  { name: "Flask", level: 90 },
+  { name: "HTML", level: 97 },
+  { name: "CSS", level: 60 },
+  { name: "C#", level: 95 },
+  { name: "SQL Server", level: 88 },
+  { name: "RESTful APIs", level: 92 },
 ];
 
 const Skills = () => {
@@ -38,8 +38,9 @@ const Skills = () => {
           
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "Git", "Figma", "Redux", "GraphQL", "Jest", "Webpack",
-              "Docker", "AWS", "Firebase", "MongoDB", "PostgreSQL", "Sass"
+              "JWT", "OAuth 2.0", "Swagger", "Postman", "SQLite", "Java", 
+              "C", "JavaScript", "Git", "Kali Linux", "Problem Solving", 
+              "Clean Architecture", "API Design"
             ].map(tool => (
               <span 
                 key={tool}

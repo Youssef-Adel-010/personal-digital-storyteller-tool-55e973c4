@@ -13,13 +13,18 @@ export const useAnimateOnScroll = () => {
             const index = Array.from(elements).indexOf(entry.target);
             const delay = Math.min(index * 0.1, 0.5); // Cap delay at 0.5s
             
-            entry.target.style.transitionDelay = `${delay}s`;
-            entry.target.classList.add('is-visible');
-            
-            // Remove the delay after animation completes to prevent issues with subsequent animations
-            setTimeout(() => {
-              entry.target.style.transitionDelay = '0s';
-            }, 1000 + delay * 1000);
+            // Fix TypeScript error by checking if element is HTMLElement
+            if (entry.target instanceof HTMLElement) {
+              entry.target.style.transitionDelay = `${delay}s`;
+              entry.target.classList.add('is-visible');
+              
+              // Remove the delay after animation completes to prevent issues with subsequent animations
+              setTimeout(() => {
+                if (entry.target instanceof HTMLElement) {
+                  entry.target.style.transitionDelay = '0s';
+                }
+              }, 1000 + delay * 1000);
+            }
             
             // Unobserve after animation
             observer.unobserve(entry.target);

@@ -1,5 +1,5 @@
 
-import { ArrowUp, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 
@@ -25,13 +25,10 @@ const Footer = () => {
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github size={20} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/youssef-adel-21b055244/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="mailto:contact@youssefadel.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:eng.youssef.adel.010@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={20} />
               </a>
               

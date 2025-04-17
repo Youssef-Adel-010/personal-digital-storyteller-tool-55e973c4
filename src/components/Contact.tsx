@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 
 const Contact = () => {
@@ -60,7 +60,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">hello@example.com</p>
+                    <p className="font-medium">eng.youssef.adel.010@gmail.com</p>
                   </div>
                 </div>
                 
@@ -70,7 +70,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="font-medium">+1 (123) 456-7890</p>
+                    <p className="font-medium">+201288150232</p>
                   </div>
                 </div>
                 
@@ -80,7 +80,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="font-medium">San Francisco, CA</p>
+                    <p className="font-medium">Cairo, Egypt</p>
                   </div>
                 </div>
               </div>
@@ -88,22 +88,20 @@ const Contact = () => {
               <h4 className="font-medium mb-3">Social Media</h4>
               <div className="flex gap-4">
                 <a 
-                  href="#" 
+                  href="https://github.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                   className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
                 >
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="#" 
+                  href="https://www.linkedin.com/in/youssef-adel-21b055244/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
                   className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
-                </a>
-                <a 
-                  href="#" 
-                  className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
-                >
-                  <Twitter className="h-5 w-5" />
                 </a>
               </div>
             </CardContent>
@@ -172,7 +170,10 @@ const Contact = () => {
                   />
                 </div>
                 
-                <Button type="submit" className="w-full">
+                <Button 
+                  type="submit" 
+                  className="w-full transition-all duration-500 hover:scale-[1.03] hover:shadow-lg"
+                >
                   Send Message
                 </Button>
               </form>

@@ -73,7 +73,7 @@
 @layer base {
   * {
     @apply border-border;
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   body {
@@ -147,6 +147,10 @@
   
   .bg-light-gradient {
     background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #dbeafe 100%);
+  }
+
+  .hover-shadow-glow:hover {
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
   }
 
   @keyframes floating {

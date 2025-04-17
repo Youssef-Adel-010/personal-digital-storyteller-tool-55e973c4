@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import Projects from '@/components/Projects';
+// import Projects from '@/components/Projects'; // Commented out as requested
 import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -28,7 +28,8 @@ const Index = () => {
       <div className="page-transition">
         <Hero />
         <About />
-        <Projects />
+        {/* Projects section commented out as requested */}
+        {/* <Projects /> */}
         <Skills />
         <Contact />
         <Footer />

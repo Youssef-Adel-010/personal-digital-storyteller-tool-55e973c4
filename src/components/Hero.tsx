@@ -1,5 +1,5 @@
 
-import { ChevronDown, Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 
@@ -8,6 +8,13 @@ const Hero = () => {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {
       aboutSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -39,11 +46,20 @@ const Hero = () => {
           </p>
           
           <div className="animate-slide-in-up opacity-0 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mt-8" style={{animationDelay: '1.0s', animationFillMode: 'forwards'}}>
-            <Button size="lg" onClick={scrollToAbout} className="glow-effect text-lg transition-all duration-500 hover:scale-105">
+            <Button 
+              size="lg" 
+              onClick={scrollToAbout} 
+              className="glow-effect text-lg transition-all duration-500 hover:scale-105"
+            >
               Explore My Work
             </Button>
-            <Button size="lg" variant="outline" asChild className="text-lg transition-all duration-500 hover:scale-105">
-              <a href="#contact">Get In Touch</a>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={scrollToContact}
+              className="text-lg transition-all duration-500 hover:scale-105 hover:shadow-glow"
+            >
+              Get In Touch
             </Button>
           </div>
           
@@ -51,13 +67,10 @@ const Hero = () => {
             <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-500 hover:scale-125">
               <Github size={22} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-500 hover:scale-125">
+            <a href="https://www.linkedin.com/in/youssef-adel-21b055244/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-500 hover:scale-125">
               <Linkedin size={22} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-all duration-500 hover:scale-125">
-              <Twitter size={22} />
-            </a>
-            <a href="mailto:contact@youssefadel.com" className="text-muted-foreground hover:text-primary transition-all duration-500 hover:scale-125">
+            <a href="mailto:eng.youssef.adel.010@gmail.com" className="text-muted-foreground hover:text-primary transition-all duration-500 hover:scale-125">
               <Mail size={22} />
             </a>
           </div>
