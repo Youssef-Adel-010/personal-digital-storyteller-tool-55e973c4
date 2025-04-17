@@ -15,6 +15,7 @@ const Contact = () => {
     subject: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -23,21 +24,28 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    
     // In a real app, you would send this data to your backend
     console.log('Form submitted:', formData);
     
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+    // Simulate API call with setTimeout
+    setTimeout(() => {
+      setIsSubmitting(false);
+      
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
+      });
+    }, 800);
   };
 
   return (
@@ -96,7 +104,7 @@ const Contact = () => {
                   <Github className="h-5 w-5" />
                 </a>
                 <a 
-                  href="https://www.linkedin.com/in/youssef-adel-21b055244/" 
+                  href="https://www.linkedin.com/in/youssef-sobh-21b055244/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="bg-secondary hover:bg-secondary/80 p-3 rounded-full transition-colors"
@@ -173,8 +181,9 @@ const Contact = () => {
                 <Button 
                   type="submit" 
                   className="w-full transition-all duration-500 hover:scale-[1.03] hover:shadow-lg"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </CardContent>

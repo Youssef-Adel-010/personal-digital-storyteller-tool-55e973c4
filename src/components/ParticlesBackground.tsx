@@ -41,9 +41,9 @@ const ParticlesBackground = () => {
       
       // Theme-based particle color
       if (theme === 'dark') {
-        particle.classList.add('bg-primary/20');
+        particle.style.backgroundColor = 'rgba(59, 130, 246, 0.2)'; // Blue for dark mode
       } else {
-        particle.classList.add('bg-blue-500/20');
+        particle.style.backgroundColor = 'rgba(37, 99, 235, 0.15)'; // Slightly darker blue for light mode
       }
       
       // Random animation duration

@@ -22,7 +22,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className={`min-h-screen bg-background transition-colors duration-500 ${theme === 'dark' ? 'bg-blue-gradient' : 'bg-light-gradient'}`}>
+    <div className={`min-h-screen transition-colors duration-500 ${theme === 'dark' ? 'bg-blue-gradient' : 'bg-light-gradient'}`}>
       <ParticlesBackground />
       <Navbar />
       <div className="page-transition">

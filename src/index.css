@@ -146,7 +146,7 @@
   }
   
   .bg-light-gradient {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #dbeafe 100%);
+    background: linear-gradient(135deg, #f0f9ff 0%, #dbeafe 50%, #bfdbfe 100%);
   }
 
   .hover-shadow-glow:hover {
